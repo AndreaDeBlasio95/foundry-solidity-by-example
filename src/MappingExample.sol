@@ -2,25 +2,26 @@
 pragma solidity ^0.8.24;
 
 contract MappingExample {
-      // Mappinng from address to uint
-      mapping(address => uint256) public myMap;
+    // Mappinng from address to uint
+    mapping(address => uint256) public myMap;
 
-      function get(address _addr) public view returns(uint256){
-            // Mapping always returns a value
-            // If the value was never set, it will return the default value
-            return myMap[_addr];
-      }
+    function get(address _addr) public view returns (uint256) {
+        // Mapping always returns a value
+        // If the value was never set, it will return the default value
+        return myMap[_addr];
+    }
 
-      function set(address _addr, uint256 _value) public {
-            // Update the value at this address
-            myMap[_addr] = _value;
-      }
+    function set(address _addr, uint256 _value) public {
+        // Update the value at this address
+        myMap[_addr] = _value;
+    }
 
-      function remove(address _addr) public {
-            // Reset the value to the default value
-            delete myMap[_addr];
-      }
+    function remove(address _addr) public {
+        // Reset the value to the default value
+        delete myMap[_addr];
+    }
 }
+
 contract NestedMappingExample {
     // Nested mapping (mapping from address to another mapping)
     mapping(address => mapping(uint256 => bool)) public nested;
