@@ -67,7 +67,7 @@ contract Array {
     // Deleting an element creates a gap in the array.
     // One trick to keep the array compact is to
     // move the last element into the place to delete.
-    function remove(uint256 index) public {
+    function removeAndKeepLastItem(uint256 index) public {
         // Move the last element into the place to delete
         arr[index] = arr[arr.length - 1];
         // Remove the last element
